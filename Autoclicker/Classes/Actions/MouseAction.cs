@@ -9,7 +9,8 @@ namespace Autoclicker.Classes.Actions
     internal abstract class MouseAction : IMouseAction
     {
         protected MouseActionSettings Settings { get;  set; }
-        private bool IsRunnig { get; set; } = false;
+        public bool IsRunning { get => isRunning; }
+        private bool isRunning = false;
         private readonly Task task;
 
         protected MouseAction(MouseActionSettings settings) { 
@@ -21,7 +22,7 @@ namespace Autoclicker.Classes.Actions
         protected abstract void Action();
 
         private void Run() { 
-            while (IsRunnig)
+            while (IsRunning)
             {
                 Action();
             }
@@ -29,12 +30,12 @@ namespace Autoclicker.Classes.Actions
 
         public void TurnOff()
         {
-            IsRunnig = false;
+            isRunning = false;
         }
 
         public void TurnOn()
         {
-            IsRunnig = true;
+            isRunning = true;
         }
     }
 }

@@ -20,6 +20,9 @@ namespace Autoclicker.Classes.InputManaging
         [DllImport("user32.dll")]
         private static extern IntPtr GetMessageExtraInfo();
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        public static extern short GetKeyState(int keyCode);
+
         public Point Position
         {
             get

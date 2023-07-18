@@ -28,162 +28,147 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.gbActionType = new System.Windows.Forms.GroupBox();
-            this.rbActDragAndDrop = new System.Windows.Forms.RadioButton();
-            this.rbActDrag = new System.Windows.Forms.RadioButton();
-            this.rbActHold = new System.Windows.Forms.RadioButton();
-            this.rbActClick = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbDelay = new System.Windows.Forms.Label();
-            this.gbArea = new System.Windows.Forms.GroupBox();
-            this.tbDy = new System.Windows.Forms.TextBox();
-            this.tbDx = new System.Windows.Forms.TextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.gbActionType.SuspendLayout();
-            this.gbArea.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 143);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            components = new System.ComponentModel.Container();
+            gbActionType = new GroupBox();
+            rbActDragAndDrop = new RadioButton();
+            rbActDrag = new RadioButton();
+            rbActHold = new RadioButton();
+            rbActClick = new RadioButton();
+            label1 = new Label();
+            lbDelay = new Label();
+            gbArea = new GroupBox();
+            tbDy = new TextBox();
+            tbDx = new TextBox();
+            timer1 = new System.Windows.Forms.Timer(components);
+            gbActionType.SuspendLayout();
+            gbArea.SuspendLayout();
+            SuspendLayout();
             // 
             // gbActionType
             // 
-            this.gbActionType.Controls.Add(this.rbActDragAndDrop);
-            this.gbActionType.Controls.Add(this.rbActDrag);
-            this.gbActionType.Controls.Add(this.rbActHold);
-            this.gbActionType.Controls.Add(this.rbActClick);
-            this.gbActionType.Location = new System.Drawing.Point(12, 12);
-            this.gbActionType.Name = "gbActionType";
-            this.gbActionType.Size = new System.Drawing.Size(200, 125);
-            this.gbActionType.TabIndex = 1;
-            this.gbActionType.TabStop = false;
-            this.gbActionType.Text = "Тип действия";
+            gbActionType.Controls.Add(rbActDragAndDrop);
+            gbActionType.Controls.Add(rbActDrag);
+            gbActionType.Controls.Add(rbActHold);
+            gbActionType.Controls.Add(rbActClick);
+            gbActionType.Location = new Point(12, 12);
+            gbActionType.Name = "gbActionType";
+            gbActionType.Size = new Size(200, 125);
+            gbActionType.TabIndex = 1;
+            gbActionType.TabStop = false;
+            gbActionType.Text = "Тип действия";
             // 
             // rbActDragAndDrop
             // 
-            this.rbActDragAndDrop.AutoSize = true;
-            this.rbActDragAndDrop.Location = new System.Drawing.Point(6, 97);
-            this.rbActDragAndDrop.Name = "rbActDragAndDrop";
-            this.rbActDragAndDrop.Size = new System.Drawing.Size(89, 19);
-            this.rbActDragAndDrop.TabIndex = 3;
-            this.rbActDragAndDrop.TabStop = true;
-            this.rbActDragAndDrop.Text = "Drag\'n\'Drop";
-            this.rbActDragAndDrop.UseVisualStyleBackColor = true;
+            rbActDragAndDrop.AutoSize = true;
+            rbActDragAndDrop.Location = new Point(6, 97);
+            rbActDragAndDrop.Name = "rbActDragAndDrop";
+            rbActDragAndDrop.Size = new Size(89, 19);
+            rbActDragAndDrop.TabIndex = 3;
+            rbActDragAndDrop.TabStop = true;
+            rbActDragAndDrop.Text = "Drag'n'Drop";
+            rbActDragAndDrop.UseVisualStyleBackColor = true;
             // 
             // rbActDrag
             // 
-            this.rbActDrag.AutoSize = true;
-            this.rbActDrag.Location = new System.Drawing.Point(6, 72);
-            this.rbActDrag.Name = "rbActDrag";
-            this.rbActDrag.Size = new System.Drawing.Size(50, 19);
-            this.rbActDrag.TabIndex = 2;
-            this.rbActDrag.TabStop = true;
-            this.rbActDrag.Text = "Drag";
-            this.rbActDrag.UseVisualStyleBackColor = true;
+            rbActDrag.AutoSize = true;
+            rbActDrag.Location = new Point(6, 72);
+            rbActDrag.Name = "rbActDrag";
+            rbActDrag.Size = new Size(50, 19);
+            rbActDrag.TabIndex = 2;
+            rbActDrag.TabStop = true;
+            rbActDrag.Text = "Drag";
+            rbActDrag.UseVisualStyleBackColor = true;
             // 
             // rbActHold
             // 
-            this.rbActHold.AutoSize = true;
-            this.rbActHold.Location = new System.Drawing.Point(6, 47);
-            this.rbActHold.Name = "rbActHold";
-            this.rbActHold.Size = new System.Drawing.Size(90, 19);
-            this.rbActHold.TabIndex = 1;
-            this.rbActHold.TabStop = true;
-            this.rbActHold.Text = "Удерживать";
-            this.rbActHold.UseVisualStyleBackColor = true;
+            rbActHold.AutoSize = true;
+            rbActHold.Location = new Point(6, 47);
+            rbActHold.Name = "rbActHold";
+            rbActHold.Size = new Size(90, 19);
+            rbActHold.TabIndex = 1;
+            rbActHold.TabStop = true;
+            rbActHold.Text = "Удерживать";
+            rbActHold.UseVisualStyleBackColor = true;
             // 
             // rbActClick
             // 
-            this.rbActClick.AutoSize = true;
-            this.rbActClick.Location = new System.Drawing.Point(6, 22);
-            this.rbActClick.Name = "rbActClick";
-            this.rbActClick.Size = new System.Drawing.Size(52, 19);
-            this.rbActClick.TabIndex = 0;
-            this.rbActClick.TabStop = true;
-            this.rbActClick.Text = "Клик";
-            this.rbActClick.UseVisualStyleBackColor = true;
+            rbActClick.AutoSize = true;
+            rbActClick.Location = new Point(6, 22);
+            rbActClick.Name = "rbActClick";
+            rbActClick.Size = new Size(52, 19);
+            rbActClick.TabIndex = 0;
+            rbActClick.TabStop = true;
+            rbActClick.Text = "Клик";
+            rbActClick.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(218, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Задержка:";
+            label1.AutoSize = true;
+            label1.Location = new Point(218, 22);
+            label1.Name = "label1";
+            label1.Size = new Size(63, 15);
+            label1.TabIndex = 2;
+            label1.Text = "Задержка:";
             // 
             // lbDelay
             // 
-            this.lbDelay.AutoSize = true;
-            this.lbDelay.Location = new System.Drawing.Point(287, 22);
-            this.lbDelay.Name = "lbDelay";
-            this.lbDelay.Size = new System.Drawing.Size(19, 15);
-            this.lbDelay.TabIndex = 3;
-            this.lbDelay.Text = "50";
+            lbDelay.AutoSize = true;
+            lbDelay.Location = new Point(287, 22);
+            lbDelay.Name = "lbDelay";
+            lbDelay.Size = new Size(25, 15);
+            lbDelay.TabIndex = 3;
+            lbDelay.Text = "500";
             // 
             // gbArea
             // 
-            this.gbArea.Controls.Add(this.tbDy);
-            this.gbArea.Controls.Add(this.tbDx);
-            this.gbArea.Location = new System.Drawing.Point(218, 84);
-            this.gbArea.Name = "gbArea";
-            this.gbArea.Size = new System.Drawing.Size(164, 53);
-            this.gbArea.TabIndex = 4;
-            this.gbArea.TabStop = false;
-            this.gbArea.Text = "Область действия";
+            gbArea.Controls.Add(tbDy);
+            gbArea.Controls.Add(tbDx);
+            gbArea.Location = new Point(218, 84);
+            gbArea.Name = "gbArea";
+            gbArea.Size = new Size(164, 53);
+            gbArea.TabIndex = 4;
+            gbArea.TabStop = false;
+            gbArea.Text = "Область действия";
             // 
             // tbDy
             // 
-            this.tbDy.Location = new System.Drawing.Point(101, 24);
-            this.tbDy.Name = "tbDy";
-            this.tbDy.Size = new System.Drawing.Size(57, 23);
-            this.tbDy.TabIndex = 1;
+            tbDy.Location = new Point(101, 24);
+            tbDy.Name = "tbDy";
+            tbDy.Size = new Size(57, 23);
+            tbDy.TabIndex = 1;
             // 
             // tbDx
             // 
-            this.tbDx.Location = new System.Drawing.Point(6, 24);
-            this.tbDx.Name = "tbDx";
-            this.tbDx.Size = new System.Drawing.Size(57, 23);
-            this.tbDx.TabIndex = 0;
+            tbDx.Location = new Point(6, 24);
+            tbDx.Name = "tbDx";
+            tbDx.Size = new Size(57, 23);
+            tbDx.TabIndex = 0;
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 176);
-            this.Controls.Add(this.gbArea);
-            this.Controls.Add(this.lbDelay);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.gbActionType);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
-            this.Text = "Autoclicker";
-            this.gbActionType.ResumeLayout(false);
-            this.gbActionType.PerformLayout();
-            this.gbArea.ResumeLayout(false);
-            this.gbArea.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(406, 142);
+            Controls.Add(gbArea);
+            Controls.Add(lbDelay);
+            Controls.Add(label1);
+            Controls.Add(gbActionType);
+            Name = "Form1";
+            Text = "Autoclicker";
+            gbActionType.ResumeLayout(false);
+            gbActionType.PerformLayout();
+            gbArea.ResumeLayout(false);
+            gbArea.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Button button1;
         private GroupBox gbActionType;
         private RadioButton rbActHold;
         private RadioButton rbActClick;
