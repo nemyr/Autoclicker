@@ -1,3 +1,4 @@
+using Autoclicker.Classes.Actions;
 using System.Windows.Input;
 namespace Autoclicker
 {
@@ -16,6 +17,9 @@ namespace Autoclicker
             //MessageBox.Show("eee");
             this.lbDelay.Text = _delay.ToString();
             Cursor.Position = new Point(1, 1);
+
+            AClick act = new AClick(new MouseActionSettings() { Delay = 1000 });
+            act.TurnOn();
             //MouseDown(sender, )
         }
 
