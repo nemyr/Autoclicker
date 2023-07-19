@@ -64,6 +64,7 @@
             // rbActClick
             // 
             rbActClick.AutoSize = true;
+            rbActClick.Checked = true;
             rbActClick.Location = new Point(6, 17);
             rbActClick.Name = "rbActClick";
             rbActClick.Size = new Size(51, 19);
@@ -81,7 +82,6 @@
             rbActDragAndDrop.Name = "rbActDragAndDrop";
             rbActDragAndDrop.Size = new Size(89, 19);
             rbActDragAndDrop.TabIndex = 4;
-            rbActDragAndDrop.TabStop = true;
             rbActDragAndDrop.Tag = "Dragndrop";
             rbActDragAndDrop.Text = "Drag'n'Drop";
             rbActDragAndDrop.UseVisualStyleBackColor = true;
@@ -94,7 +94,6 @@
             rbActDrag.Name = "rbActDrag";
             rbActDrag.Size = new Size(50, 19);
             rbActDrag.TabIndex = 3;
-            rbActDrag.TabStop = true;
             rbActDrag.Tag = "Drag";
             rbActDrag.Text = "Drag";
             rbActDrag.UseVisualStyleBackColor = true;
@@ -107,7 +106,6 @@
             rbActHold.Name = "rbActHold";
             rbActHold.Size = new Size(51, 19);
             rbActHold.TabIndex = 2;
-            rbActHold.TabStop = true;
             rbActHold.Tag = "Hold";
             rbActHold.Text = "Hold";
             rbActHold.UseVisualStyleBackColor = true;
@@ -120,7 +118,6 @@
             rbActClickHold.Name = "rbActClickHold";
             rbActClickHold.Size = new Size(80, 19);
             rbActClickHold.TabIndex = 1;
-            rbActClickHold.TabStop = true;
             rbActClickHold.Tag = "ClickHold";
             rbActClickHold.Text = "Click-hold";
             rbActClickHold.UseVisualStyleBackColor = true;

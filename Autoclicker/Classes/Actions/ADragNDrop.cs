@@ -9,15 +9,14 @@ namespace Autoclicker.Classes.Actions
     internal class ADragNDrop : MouseAction
     {
         private readonly Random random = new Random();
-        private Point point;
 
         public ADragNDrop(MouseActionSettings settings) : base(settings)
         {
-            point = _inputManager.Position;
         }
 
         protected override void Action()
         {
+            var point = _inputManager.Position;
             while (IsRunning)
             {
                 _inputManager.LMBDown();

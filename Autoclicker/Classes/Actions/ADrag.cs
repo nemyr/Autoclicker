@@ -3,15 +3,14 @@
     internal class ADrag : MouseAction
     {
         private Random random = new Random();
-        private Point point;
 
         public ADrag(MouseActionSettings settings) : base(settings)
         {
-            point = _inputManager.Position;
         }
 
         protected override void Action()
         {
+            var point = _inputManager.Position;
             _inputManager.LMBDown();
             while (IsRunning) { 
                 _inputManager.Position = new() { 

@@ -1,4 +1,5 @@
 using Autoclicker.Classes.Actions;
+
 namespace Autoclicker
 {
     public partial class Form1 : Form
@@ -51,7 +52,7 @@ namespace Autoclicker
                 "Drag" => new ADrag(MouseActionSettings),
                 "Dragndrop" => new ADragNDrop(MouseActionSettings),
                 _ => null
-            };             
+            };
         }
     }
 }

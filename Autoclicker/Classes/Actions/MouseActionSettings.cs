@@ -6,8 +6,8 @@ namespace Autoclicker.Classes.Actions
     internal class MouseActionSettings: INotifyPropertyChanged
     {
         private int delay = 50;
-        private int shiftX = 0;
-        private int shiftY = 0;
+        private int shiftX = 10;
+        private int shiftY = 10;
 
         public int Delay {
             get => delay;
