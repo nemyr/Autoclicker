@@ -38,11 +38,11 @@
             label1 = new Label();
             lbDelay = new Label();
             gbArea = new GroupBox();
+            label3 = new Label();
+            label2 = new Label();
             tbDy = new TextBox();
             tbDx = new TextBox();
             timer1 = new System.Windows.Forms.Timer(components);
-            label2 = new Label();
-            label3 = new Label();
             gbActionType.SuspendLayout();
             gbArea.SuspendLayout();
             SuspendLayout();
@@ -69,8 +69,10 @@
             rbActClick.Size = new Size(51, 19);
             rbActClick.TabIndex = 0;
             rbActClick.TabStop = true;
+            rbActClick.Tag = "Click";
             rbActClick.Text = "Click";
             rbActClick.UseVisualStyleBackColor = true;
+            rbActClick.CheckedChanged += rbAct_CheckedChanged;
             // 
             // rbActDragAndDrop
             // 
@@ -80,8 +82,10 @@
             rbActDragAndDrop.Size = new Size(89, 19);
             rbActDragAndDrop.TabIndex = 4;
             rbActDragAndDrop.TabStop = true;
+            rbActDragAndDrop.Tag = "Dragndrop";
             rbActDragAndDrop.Text = "Drag'n'Drop";
             rbActDragAndDrop.UseVisualStyleBackColor = true;
+            rbActDragAndDrop.CheckedChanged += rbAct_CheckedChanged;
             // 
             // rbActDrag
             // 
@@ -91,8 +95,10 @@
             rbActDrag.Size = new Size(50, 19);
             rbActDrag.TabIndex = 3;
             rbActDrag.TabStop = true;
+            rbActDrag.Tag = "Drag";
             rbActDrag.Text = "Drag";
             rbActDrag.UseVisualStyleBackColor = true;
+            rbActDrag.CheckedChanged += rbAct_CheckedChanged;
             // 
             // rbActHold
             // 
@@ -102,8 +108,10 @@
             rbActHold.Size = new Size(51, 19);
             rbActHold.TabIndex = 2;
             rbActHold.TabStop = true;
+            rbActHold.Tag = "Hold";
             rbActHold.Text = "Hold";
             rbActHold.UseVisualStyleBackColor = true;
+            rbActHold.CheckedChanged += rbAct_CheckedChanged;
             // 
             // rbActClickHold
             // 
@@ -113,8 +121,10 @@
             rbActClickHold.Size = new Size(80, 19);
             rbActClickHold.TabIndex = 1;
             rbActClickHold.TabStop = true;
+            rbActClickHold.Tag = "ClickHold";
             rbActClickHold.Text = "Click-hold";
             rbActClickHold.UseVisualStyleBackColor = true;
+            rbActClickHold.CheckedChanged += rbAct_CheckedChanged;
             // 
             // label1
             // 
@@ -147,6 +157,24 @@
             gbArea.TabStop = false;
             gbArea.Text = "Area";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(91, 28);
+            label3.Name = "label3";
+            label3.Size = new Size(20, 15);
+            label3.TabIndex = 3;
+            label3.Text = "dy";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(2, 28);
+            label2.Name = "label2";
+            label2.Size = new Size(20, 15);
+            label2.TabIndex = 2;
+            label2.Text = "dx";
+            // 
             // tbDy
             // 
             tbDy.Location = new Point(113, 24);
@@ -165,24 +193,6 @@
             // 
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(2, 28);
-            label2.Name = "label2";
-            label2.Size = new Size(20, 15);
-            label2.TabIndex = 2;
-            label2.Text = "dx";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(91, 28);
-            label3.Name = "label3";
-            label3.Size = new Size(20, 15);
-            label3.TabIndex = 3;
-            label3.Text = "dy";
             // 
             // Form1
             // 

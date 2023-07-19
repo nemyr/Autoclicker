@@ -38,5 +38,24 @@ namespace Autoclicker
         {
             MouseActionSettings.Delay = Math.Max(10, MouseActionSettings.Delay + (e.Delta > 0 ? 10 : -10));
         }
+
+        private void rbAct_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+
+            switch (rb.Tag)
+            {
+                case "Click":
+                    _mouseAction = new AClick(MouseActionSettings);
+                    break;
+                case "ClickHold":
+                    _mouseAction = new AClickHold(MouseActionSettings);
+                    break;
+                case "Hold":
+                case "Drag":
+                case "Dragndrop":
+                    break;
+            }
+        }
     }
 }
