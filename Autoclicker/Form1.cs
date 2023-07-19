@@ -5,7 +5,7 @@ namespace Autoclicker
     {
         private MouseActionSettings MouseActionSettings { get; set; } = new MouseActionSettings();
 
-        private IMouseAction _mouseAction;
+        private IMouseAction? _mouseAction;
 
         public Form1()
         {
@@ -18,18 +18,23 @@ namespace Autoclicker
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (IsKeyLocked(Keys.CapsLock) && !(_mouseAction?.IsRunning).GetValueOrDefault(false))
+            if (IsKeyLocked(Keys.CapsLock))
             {
-                _mouseAction = new AClick(new MouseActionSettings() { Delay = MouseActionSettings.Delay });
-                _mouseAction.TurnOn();
+                _mouseAction ??= new AClick(MouseActionSettings);
+                if (!_mouseAction.IsRunning)
+                {
+                    _mouseAction.TurnOn();
+                    gbActionType.Enabled = false;
+                }
             }
             else
             {
                 _mouseAction?.TurnOff();
+                gbActionType.Enabled = true;
             }
         }
 
-        private void MouseWheelHandler(object sender, MouseEventArgs e)
+        private void MouseWheelHandler(object? sender, MouseEventArgs e)
         {
             MouseActionSettings.Delay = Math.Max(10, MouseActionSettings.Delay + (e.Delta > 0 ? 10 : -10));
         }

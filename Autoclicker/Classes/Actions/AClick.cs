@@ -14,7 +14,6 @@ namespace Autoclicker.Classes.Actions
         protected override void Action()
         {
             _inputManager.LMBDown();
-            Thread.Sleep(Settings.Delay);
             _inputManager.LMBUp();
             Thread.Sleep(Settings.Delay);
         }
