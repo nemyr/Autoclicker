@@ -1,16 +1,9 @@
 using Autoclicker.Classes.Actions;
-using System.Windows.Input;
 namespace Autoclicker
 {
     public partial class Form1 : Form
     {
-        private MouseActionSettings MouseActionSettings { get; set; } =
-            new MouseActionSettings
-            {
-                Delay = 50,
-                ShiftX = 0,
-                ShiftY = 0
-            };
+        private MouseActionSettings MouseActionSettings { get; set; } = new MouseActionSettings();
 
         private IMouseAction _mouseAction;
 
@@ -18,7 +11,9 @@ namespace Autoclicker
         {
             InitializeComponent();
             this.MouseWheel += MouseWheelHandler;
-            this.lbDelay.Text = MouseActionSettings.Delay.ToString();
+            this.lbDelay.DataBindings.Add(new Binding("Text", MouseActionSettings, "Delay"));
+            this.tbDx.DataBindings.Add(new Binding("Text", MouseActionSettings, "ShiftX"));
+            this.tbDy.DataBindings.Add(new Binding("Text", MouseActionSettings, "ShiftY"));
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -37,7 +32,6 @@ namespace Autoclicker
         private void MouseWheelHandler(object sender, MouseEventArgs e)
         {
             MouseActionSettings.Delay = Math.Max(10, MouseActionSettings.Delay + (e.Delta > 0 ? 10 : -10));
-            lbDelay.Text = MouseActionSettings.Delay.ToString();
         }
     }
 }
