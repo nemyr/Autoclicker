@@ -43,6 +43,8 @@
             tbDy = new TextBox();
             tbDx = new TextBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            label4 = new Label();
+            label5 = new Label();
             gbActionType.SuspendLayout();
             gbArea.SuspendLayout();
             SuspendLayout();
@@ -191,15 +193,38 @@
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(221, 108);
+            label4.Name = "label4";
+            label4.Size = new Size(175, 15);
+            label4.TabIndex = 5;
+            label4.Text = "Toggle Caps Lock to turn on/off";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(221, 123);
+            label5.Name = "label5";
+            label5.Size = new Size(165, 30);
+            label5.TabIndex = 6;
+            label5.Text = "Scroll mouse wheel to change\r\ndelay";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             ClientSize = new Size(406, 167);
+            Controls.Add(label5);
+            Controls.Add(label4);
             Controls.Add(gbArea);
             Controls.Add(lbDelay);
             Controls.Add(label1);
             Controls.Add(gbActionType);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Form1";
             Text = "Autoclicker";
             gbActionType.ResumeLayout(false);
@@ -225,5 +250,7 @@
         private RadioButton rbActClick;
         private Label label3;
         private Label label2;
+        private Label label4;
+        private Label label5;
     }
 }
