@@ -9,7 +9,7 @@
         protected override void Action()
         {
             _inputManager.LMBDown();
-            while (IsRunning) { }
+            while (IsRunning) { Thread.Sleep(Settings.Delay); }
             _inputManager.LMBUp();
         }
     }
