@@ -1,17 +1,15 @@
-﻿
-using Autoclicker.Classes.InputManaging;
-
-namespace Autoclicker.Classes.Actions
+﻿namespace Autoclicker.Classes.Actions
 {
-    internal class AClick : MouseAction
+    internal class AClickHold : MouseAction
     {
-        public AClick(MouseActionSettings settings) : base(settings)
+        public AClickHold(MouseActionSettings settings) : base(settings)
         {
         }
 
         protected override void Action()
         {
             _inputManager.LMBDown();
+            Thread.Sleep(Settings.Delay);
             _inputManager.LMBUp();
             Thread.Sleep(Settings.Delay);
         }
