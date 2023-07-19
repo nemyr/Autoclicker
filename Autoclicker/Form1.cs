@@ -11,9 +11,9 @@ namespace Autoclicker
         {
             InitializeComponent();
             this.MouseWheel += MouseWheelHandler;
-            this.lbDelay.DataBindings.Add(new Binding("Text", MouseActionSettings, "Delay"));
-            this.tbDx.DataBindings.Add(new Binding("Text", MouseActionSettings, "ShiftX"));
-            this.tbDy.DataBindings.Add(new Binding("Text", MouseActionSettings, "ShiftY"));
+            this.lbDelay.DataBindings.Add(new Binding("Text", MouseActionSettings, "Delay", false, DataSourceUpdateMode.OnPropertyChanged));
+            this.tbDx.DataBindings.Add(new Binding("Text", MouseActionSettings, "ShiftX", false, DataSourceUpdateMode.OnPropertyChanged));
+            this.tbDy.DataBindings.Add(new Binding("Text", MouseActionSettings, "ShiftY", false, DataSourceUpdateMode.OnPropertyChanged));
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -43,19 +43,15 @@ namespace Autoclicker
         {
             RadioButton rb = (RadioButton)sender;
 
-            switch (rb.Tag)
+            _mouseAction = rb.Tag switch
             {
-                case "Click":
-                    _mouseAction = new AClick(MouseActionSettings);
-                    break;
-                case "ClickHold":
-                    _mouseAction = new AClickHold(MouseActionSettings);
-                    break;
-                case "Hold":
-                case "Drag":
-                case "Dragndrop":
-                    break;
-            }
+                "Click" => new AClick(MouseActionSettings),
+                "ClickHold" => new AClickHold(MouseActionSettings),
+                "Hold" => new AHold(MouseActionSettings),
+                "Drag" => new ADrag(MouseActionSettings),
+                "Dragndrop" => new ADragNDrop(MouseActionSettings),
+                _ => null
+            };             
         }
     }
 }

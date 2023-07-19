@@ -18,13 +18,6 @@ namespace Autoclicker.Classes.Actions
 
         protected abstract void Action();
 
-        private void Run() { 
-            while (IsRunning)
-            {
-                Action();
-            }
-        }
-
         public void TurnOff()
         {
             isRunning = false;
@@ -34,7 +27,7 @@ namespace Autoclicker.Classes.Actions
         {
             isRunning = true;
             if (task == null || task.IsCompleted ) 
-                task = new Task(Run);
+                task = new Task(Action);
             task.Start();
         }
     }

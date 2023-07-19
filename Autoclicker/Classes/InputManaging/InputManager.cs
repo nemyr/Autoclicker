@@ -27,7 +27,7 @@ namespace Autoclicker.Classes.InputManaging
         {
             get
             {
-                return Position;
+                return Cursor.Position;
             }
             set
             {
