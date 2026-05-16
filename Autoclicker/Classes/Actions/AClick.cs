@@ -1,7 +1,4 @@
-﻿
-using Autoclicker.Classes.InputManaging;
-
-namespace Autoclicker.Classes.Actions
+﻿namespace Autoclicker.Classes.Actions
 {
     internal class AClick : MouseAction
     {

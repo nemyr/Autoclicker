@@ -8,9 +8,15 @@
 
         protected override void Action()
         {
-            _inputManager.LMBDown();
-            while (IsRunning) { Thread.Sleep(Settings.Delay); }
-            _inputManager.LMBUp();
+            try
+            {
+                _inputManager.LMBDown();
+                while (IsRunning) { Thread.Sleep(Settings.Delay); }
+            }
+            finally
+            {
+                _inputManager.LMBUp();
+            }
         }
     }
 }

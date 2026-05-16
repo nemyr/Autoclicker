@@ -20,18 +20,16 @@ namespace Autoclicker.Classes.InputManaging
         [DllImport("user32.dll")]
         private static extern IntPtr GetMessageExtraInfo();
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        public static extern short GetKeyState(int keyCode);
-
         public Point Position
         {
             get
             {
-                return Cursor.Position;
+                GetCursorPos(out var lpPoint);
+                return new Point(lpPoint.X, lpPoint.Y);
             }
             set
             {
-                Cursor.Position = value;
+                SetCursorPos(value.X, value.Y);
             }
         }
 

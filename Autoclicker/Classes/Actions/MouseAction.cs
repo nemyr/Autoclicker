@@ -8,7 +8,7 @@ namespace Autoclicker.Classes.Actions
         protected readonly InputManager _inputManager;
 
         public bool IsRunning { get => isRunning; }
-        private bool isRunning = false;
+        private volatile bool isRunning = false;
         private Task task;
 
         protected MouseAction(MouseActionSettings settings) { 
@@ -27,8 +27,7 @@ namespace Autoclicker.Classes.Actions
         {
             isRunning = true;
             if (task == null || task.IsCompleted ) 
-                task = new Task(Action);
-            task.Start();
+                task = Task.Run(Action);
         }
     }
 }
